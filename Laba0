@@ -1,0 +1,38 @@
+Laba-0
+======
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main()
+        {
+            
+            string[] NewFile = File.ReadAllLines("1.txt");
+            int Count = 0;
+            Console.WriteLine("Содержимое файла:");
+            foreach (string str in NewFile)
+            {
+                Console.WriteLine(str);
+                Count++;
+            }
+            Console.WriteLine("Количество строк в документе равно {0}.", Count);
+            Console.WriteLine("Найденные координаты:");
+            for (int i = 0; i < Count; i++)
+            {
+                if (NewFile[i].Length > 2)
+                {
+                    Console.WriteLine(NewFile[i]);
+                }
+            }
+            Console.ReadKey(true);
+        }
+    }
+}
